@@ -23,7 +23,7 @@ public class hooks {
 
 	@After
 	public void cleanUp() {
-		driver.close();
+		driver.quit();
 	}
 
 }
