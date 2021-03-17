@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0538)https://docs-secure-cdn.fresco.me/system/attachments/files/021/060/904/original/b7df08bb920448a5d079881a5edbcdd8d0510716/login.html?Expires=1610985117&Signature=0QA6lsqKKPl-it2MY2SX5Q92Ul9rwPg9XO-YgAosJOm7aCR~9SzwrNKbe4KWTRfaSAqAgnaxYouK-P5EyGd64WOR9p4gyMxhojW-rHgPRRD9uVlhCRv84zttc7JOVEOK~e70WEKcRNnsxesO~LirKpgY-VPWL8bRULeG9IffDOO3hj0gfDUaqKNao1nK2tp1zim5b3tKSGvJJH2u6l1vhk7O7VNAIpyCEZRNvxqliGoK75gdMMM2EzI60YEvIsPi3sWp9d0TZ2obEWHtA9E7mDnSX-01MKbSNHSJUNulxsz9WKPSwk-hV0MIP2V4wS9vtrUMP5-Hl-ly-jzkt~bKSA__&Key-Pair-Id=APKAJUTRVJCFRZY3Z43A -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Login</title>
+<style type="text/css">
+h1{
+	color: red;
+}
+h2{
+	color:white;
+}
+#mainCnt{
+	margin: 0px;
+	margin-top:50px;
+	margin-left:200px;
+	width: 800px;
+	font-family:Calibri;
+}
+
+#footer{
+	background-color: black;
+	color:white;
+	font-weight: bold;
+	font-style:italic;
+	font-size:12px;
+	padding: 10px 10px 10px 10px;
+	border-top: 1px solid;
+	border-top-color: white;
+}
+
+
+
+.errMessage{
+	color:red;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 14px;
+}
+h3{
+	color: black;
+}
+.btn{
+
+	padding: 5px 10px 5px 10px;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+
+</style>
+<script type="text/javascript">
+function validateForm(){
+	var uname=myform.userName.value;
+	var upwd=myform.userPwd.value;
+	
+	var flag=false;
+	if(uname==""||uname==null){
+		document.getElementById('userErrMsg').innerHTML=" * Please enter userName.";
+		
+	}
+	else if(upwd=="" || upwd==null)
+		{
+		flag=false;
+		document.getElementById('userErrMsg').innerHTML="";
+		document.getElementById('pwdErrMsg').innerHTML=" * Please enter password.";
+		}
+	else if(uname=="admin" && upwd=="admin"){
+		flag=true;
+		document.getElementById('userErrMsg').innerHTML="";
+		document.getElementById('pwdErrMsg').innerHTML="";
+		
+		}
+	else{
+		flag=false;
+		document.getElementById('userErrMsg').innerHTML="";
+		document.getElementById('pwdErrMsg').innerHTML="";
+		alert('Invalid login! Please try again!');
+	}
+	
+	if(flag)
+		window.location.href = "hotelbooking.html";
+	
+	return flag;
+}
+</script>
+
+</head>
+<body id="mainCnt">
+<div style=" border-radius: 15px;      padding: 20px;    width: 400px;     box-shadow:5px 5px 5px 5px red;">
+<div>
+<h1 align="center"> Hotel Booking Application </h1>
+<hr>
+
+<form name="myform" method="post">
+	<table>
+		<tbody><tr>
+			<th colspan="3" style="color:red;">Login Form </th>
+		</tr>
+		<tr>
+			<td>UserName:</td>
+			<td>
+				<input type="text" name="userName" size="20">
+			</td>
+			<td>
+				<div id="userErrMsg" class="errMessage"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td>
+				<input type="password" name="userPwd" size="20">
+			</td>
+			<td>
+				<div id="pwdErrMsg" class="errMessage"></div>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="button" class="btn" value="Login" onclick="validateForm()">
+			</td>
+			
+		</tr>
+		
+	</tbody></table>
+
+
+</form>
+
+</div>
+<hr>
+
+
+<hr>
+</div>
+
+
+</body></html>

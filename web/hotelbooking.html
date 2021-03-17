@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- saved from url=(0547)https://docs-secure-cdn.fresco.me/system/attachments/files/021/060/911/original/0fb3d5fe477abc5e4c0dd22d672a69504098c714/hotelbooking.html?Expires=1610985151&Signature=autmMzC90LpvQlDk3DsNtFB-Cv2jOHIcMzCxXM-%2De8h04H8usmWcIKoZ9qQyR6wmESmTeHyZavUB8s4jlHmiSc4jDtJzNdE-jYumQqkGpgufb9MGwimIy6vMhF6BP-reSTGTF5prpkYo7Ug29sTe8NMi8I7IF-7aM8YWDNhAApyVtzFl857p2uDWKTWxGlwgWzfDh0bryuNa5CSfjXeFX~f1fgNOOz82qZ-yQGhkI26VN1HtRONDewWNPp3CJvhuJXzxQDOZ4ntxLqVHT1TUsQwEsczkwlsB0q60V3akFf4ihQhw8xKy~Dgk-z~hLnSzoklMDjD7~jreCDiglCw40A__&Key-Pair-Id=APKAJUTRVJCFRZY3Z43A -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Hotel Booking</title>
+<style type="text/css">
+.btn{
+
+	padding: 5px 10px 5px 10px;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+</style>
+<script type="text/javascript">
+function calculateRooms(){
+	var pers=frmReg.persons.value;
+	var noPersons=parseInt(pers);
+	if(noPersons<=3)
+		document.getElementById('rooms').innerHTML=1;
+	else if(noPersons<=6)
+		document.getElementById('rooms').innerHTML=2;
+	else
+		document.getElementById('rooms').innerHTML=3;
+	
+}
+
+function chkEmpty(){
+	var mob = /^[7-9]{1}[0-9]{9}$/;
+	var email=/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+
+	if (document.frmReg.txtFirstName.value == "") {alert("Please fill the First Name");}
+	else if (document.frmReg.txtLastName.value == "") {alert("Please fill the Last Name");}
+	else if (document.frmReg.txtEmail.value == ""){alert("Please fill the Email");}
+	else if (email.test(document.frmReg.txtEmail.value) == false) { alert("Please enter valid Email Id.");}
+	else if (document.frmReg.txtPhone.value == "") {alert("Please fill the Mobile No.");}
+	else if (mob.test(document.frmReg.txtPhone.value) == false) { alert("Please enter valid Contact no.");}
+	else if (document.frmReg.persons.value == ""){alert("Please fill the Number of people attending");}
+	else if (document.frmReg.city.value=="Select City"){alert("Please select city")}
+	else if (document.frmReg.state.value=="Select State"){alert("Please select state")}
+	else if (document.frmReg.txtCardholderName.value == "") {alert("Please fill the Card holder name");}
+	else if (document.frmReg.txtDebit.value == ""){alert("Please fill the Debit card Number");}
+	else if (document.frmReg.txtCvv.value == "") {alert("Please fill the CVV");}
+	else if (document.frmReg.txtMonth.value == ""){alert("Please fill expiration month");}
+	else if (document.frmReg.txtYear.value == ""){alert("Please fill the expiration year");}
+
+		else {
+	//alert("Hotel Booking completed Successfully.");
+	window.location="success.html";
+		}
+	}
+
+
+
+</script>
+
+</head>
+<body>
+<div style="width: 700px;margin-left: 200px;">
+<h2 style="color:red; font-style: italic;">Hotel Booking Form</h2>
+<hr>
+<div style=" border-radius: 15px;      padding: 20px;    width: 400px;     box-shadow:5px 5px 5px 5px red;">
+<form name="frmReg">
+
+	   <table align="center" style="font-family:Calibri;">
+            <tbody><tr>
+            	<th style="color:red;" align="left">Personal Details</th>
+            </tr>
+          <tr>
+                <td align="left">First Name* : </td>
+                <td><input type="text" class="Format1" id="txtFirstName" name="txtFN"></td>
+            </tr>
+			<tr>
+                <td align="left">Last Name* :</td>
+                <td align="left"><input type="text" id="txtLastName" name="txtLN"></td>
+            </tr>
+			 			<tr>
+                <td align="left">Email* :</td>
+                <td><input type="text" id="txtEmail" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"></td>
+            </tr>
+            	
+			<tr>
+                <td align="left">Mobile no.*:</td>
+                <td><input type="text" name="Phone" id="txtPhone" pattern="[789][0-9]{9}"></td>
+            </tr>
+			
+			<tr>
+                <td align="left">Address:</td>
+                <td>
+                	<textarea rows="5" cols="20"></textarea>
+                </td>
+			</tr>
+			<tr>
+	            <td align="left">City* : </td>
+	            <td><select name="city">
+					  <option value="Select City" selected="">Select City</option>
+					  <option value="Pune">Pune</option>
+					  <option value="Bangalore">Bangalore</option>
+					  <option value="Chennai">Chennai</option>
+					   <option value="Hyderabad">Hyderabad</option>
+				</select></td>
+	        </tr>
+			<tr>
+	            <td align="left">State* : </td>
+	            <td align="left"><select name="state">
+					  <option value="Select State" selected="">Select State</option>
+					<option value="Maharashtra">Maharashtra</option>	
+					  <option value="Karnataka">Karnataka</option>
+					  <option value="Tamilnadu">Tamilnadu</option>
+					  <option value="Telangana">Telangana</option>
+					   
+				</select></td>
+	        </tr>
+			
+			
+			<tr>
+	           </tr><tr>
+				<td align="left">Number of guest staying*:</td>
+				<td>
+				<select name="persons" required="" onchange="calculateRooms()">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				</select>
+				</td>
+				</tr>
+				<tr>
+				<td colspan="2"><div style="font-style: italic;font-size: 11px; margin-left: 50px; ">Note: *Minimum 3 members can share one room.</div>
+		</td>
+				</tr>
+			
+			<tr>
+				<td align="left">No of rooms booked:</td>
+				<td>
+					<div id="rooms" style="font-weight: bold;"> 1</div>
+				</td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+                <tr>
+            	<th colspan="2" style="color:red;" align="left">Payment Details</th>
+            	</tr> 
+			
+            <tr>
+                <td align="right">Card Holder Name *: </td>
+                <td><input type="text" class="Format1" id="txtCardholderName" name="txtFN"></td>
+            </tr>
+			 			<tr>
+                <td align="right">Debit Card Number* :</td>
+                <td><input type="text" id="txtDebit" name="debit"></td>
+            </tr>
+           
+			<tr>
+                <td align="right">CVV*:</td>
+                <td><input type="text" name="cvv" id="txtCvv"></td>
+            </tr>
+			<tr>
+                <td align="right">Expiration month*:</td>
+                <td><input type="text" name="month" id="txtMonth"></td>
+            </tr>
+			<tr>
+                <td align="right">Expiration Year*:</td>
+                <td><input type="text" name="year" id="txtYear"></td>
+            </tr>
+			          
+			<tr>
+                <td colspan="2" align="right"> <br> 
+				<input type="button" id="btnPayment" class="btn" value="Confirm Booking" onclick="chkEmpty()">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </td></tr>
+           </tbody></table>
+
+       </form>
+</div>
+
+</div>
+
+</body></html>
