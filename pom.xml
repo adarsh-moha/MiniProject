@@ -4,6 +4,8 @@
   <artifactId>MiniProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
+  
+
 		<dependency>
 			<groupId>net.sourceforge.htmlunit</groupId>
 			<artifactId>htmlunit</artifactId>
@@ -34,6 +36,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<runOrder>alphabetical</runOrder>
+					<includes>
+                        <include>**/*Runner.java</include>
+                    </includes>
 				</configuration>
 			</plugin>
 

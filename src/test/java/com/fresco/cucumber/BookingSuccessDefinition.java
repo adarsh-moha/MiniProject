@@ -15,7 +15,7 @@ import java.util.*;
 public class BookingSuccessDefinition{
 	@Given("I am on Success page")
 	public void i_am_on_Success_page() {
-		hooks.driver.get("file:///X:/Eclips_workspace/MiniProject/web/success.html");
+		hooks.driver.get(System.getProperty("user.dir")+"/web/success.html");
 	}
 
 	@When("i check page title")

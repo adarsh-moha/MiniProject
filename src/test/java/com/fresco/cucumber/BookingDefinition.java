@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 public class BookingDefinition{
 	@Given("I am on the booking page")	
 	public void imonTheBookingPage() {
-		hooks.driver.get("file:///X:/Eclips_workspace/MiniProject/web/hotelbooking.html");
+		hooks.driver.get(System.getProperty("user.dir")+"/web/hotelbooking.html");
 		// TODO Auto-generated method stub
 
 	}

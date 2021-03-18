@@ -17,7 +17,7 @@ import org.openqa.selenium.interactions.*;
 public class LoginStepDefinition {
 	@Given("I am on the login page")
 	public void i_am_on_the_login_page() {
-		hooks.driver.get("file:///X:/Eclips_workspace/MiniProject/web/login.html");
+		hooks.driver.get(System.getProperty("user.dir")+"/web/login.html");
 		// TODO Auto-generated method stub
 	}
 
